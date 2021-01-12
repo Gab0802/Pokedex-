@@ -17,6 +17,8 @@
             <?= $this->Html->link(__('List Pokemons'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
+
+    <!-- carusel -->
     <div class="column-responsive column-80">
         <div class="pokemons view content">
             <h3 style='text-align:center'><?= h($pokemon->name) ?></h3>
@@ -42,10 +44,10 @@
                     <span class="sr-only">Next</span>
                  </a>
             </div>
-    
+        <!-- type sur la view -->
             <div class="col-sm">
                 <div>
-                    <div class="card c2">
+                    <div class="card custom"> <!-- double classe pour faire le CSS -->
                         <h3 class="card__type <?= $pokemon->first_type ?>">
                             <?= $pokemon->first_type ?>
                         </h3>
@@ -59,7 +61,7 @@
                     </div>
                     </div>
 
-
+        <!-- tableau de caractéristiques -->
             <div class="related">
                 <h4><?= __('Related Pokemon Stats') ?></h4>
                 <?php if (!empty($pokemon->pokemon_stats)) : ?>
