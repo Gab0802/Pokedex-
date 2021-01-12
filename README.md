@@ -142,3 +142,4 @@ PokeApi : https://pokeapi.co/api/v2/pokemon/25
 CakePhp CookBook : https://book.cakephp.org/4/en/index.html
 
 Discord : https://discord.gg/dJkXDdzF6G
+# Pokedex_2
