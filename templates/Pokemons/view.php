@@ -15,10 +15,16 @@
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Form->postLink(__('Delete Pokemon'), ['action' => 'delete', $pokemon->id], ['confirm' => __('Are you sure you want to delete # {0}?', $pokemon->id), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Pokemons'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+
+            <!-- Lien vers Dashboard sur page view -->
+            <h5>
+                <?php echo $this->Html->link("Dashboard ", array('controller' => 'Dashboard','action'=> 'index'), array( 'class' => 'button-dashboard')) ?>
+            </h5>
         </div>
+
     </aside>
 
-    <!-- carusel -->
+    <!-- carousel -->
     <div class="column-responsive column-80">
         <div class="pokemons view content">
             <h3 style='text-align:center'><?= h($pokemon->name) ?></h3>
@@ -26,13 +32,13 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-30" src="<?= h($pokemon->default_front_sprite_url) ?>" alt="First slide">
+                    <img class="d-block w-30"  src="<?= h($pokemon->default_front_sprite_url) ?>" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-30" src="<?= h($pokemon->default_back_sprite_url) ?>" alt="Second slide">
+                    <img class="d-block w-30"  src="<?= h($pokemon->default_back_sprite_url) ?>" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-30" src="<?= h($pokemon->front_shiny_sprite_url) ?>" alt="Third slide">
+                    <img class="d-block w-30"  src="<?= h($pokemon->front_shiny_sprite_url) ?>" alt="Third slide">
                 </div>
             </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -71,7 +77,7 @@
                                 <th><?= __('Stat Id') ?></th>
                                 <th><?= __('Value') ?></th>
                             </tr>
-                            <?php $name = array("HP", "Defense", "Attack", "Special attack", "Special defense", "Speed");
+                            <?php $name = array("HP", "Attack", "Defense", "Special attack", "Special defense", "Speed");
                             foreach ($pokemon->pokemon_stats as $key => $pokemonStats) : ?>
                                 <tr>
                                     <th><?php print($name[$key]) ?></th>

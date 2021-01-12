@@ -35,6 +35,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+
 <body>
     <nav class="container navbar navbar-expand-lg navbar-light bg-light">
 
@@ -58,6 +59,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <?= $this->Html->link(__('Pokemons'), ['controller' => 'Pokemons', 'action' => 'index'], ['class' => "nav-link"]) ?>
                 </li>
             </ul>
+           
         </div>
     </nav>
     <main class="main">

@@ -7,6 +7,12 @@
 <div class="pokemons index content">
     <h3><?= __('Pokemons') ?></h3>
 
+<!-- Bouton d'accès au Dashbord -> index Dashboard -->
+    <ul>
+        <li>
+            <?php echo $this->Html->link("Dashboard ", array('controller' => 'Dashboard','action'=> 'index'), array( 'class' => 'button-dashboard')) ?>
+        </li>
+    </ul>
     <div class="row">
         <?php foreach ($pokemons as $pokemon) : ?>
                 <div class="col-12 col-md-4 col-sm-6 col-xs-12">

@@ -27,6 +27,39 @@ class DashboardController extends AppController
             ->where(['id >=' => 387])
             ->where(['id <=' => 493]);
 
+
+        // Récupération type pokemon
+        $PokemonFee = $this->loadModel('pokemon_types');
+
+        //On parcourt les tables pour trouver les pokemon fee
+        $generation1 = $PokemonFee->find('all')
+            ->where(['pokemon_id >=' => 1])
+            ->where(['AND' => ['pokemon_id <=' => 151]])
+            ->where(['AND' => ['type_id =' => 10]]);
+        //3eme génération 
+        $generation3 = $PokemonFee->find('all')
+            ->where(['pokemon_id >=' => 252])
+            ->where(['AND' => ['pokemon_id <=' => 386]])
+            ->where(['AND' => ['type_id =' => 10]]);
+        //7eme génération
+        $generation7 = $PokemonFee->find('all')
+            ->where(['pokemon_id >=' => 722])
+            ->where(['AND' => ['pokemon_id <=' => 809]])
+            ->where(['AND' => ['type_id =' => 10]]);
+
+        // On compte les pokemon de type fee 
+        $comptFee=0;
+        foreach ($generation1 as $row){
+            $comptFee = $comptFee + 1;
+        }
+        foreach ($generation3 as $row){
+            $comptFee = $comptFee + 1;
+        }
+        foreach ($generation7 as $row){
+            $comptFee = $comptFee + 1;
+        }   
+
+        
         // Initialisation variables
         $longueur = 0;
         $nbPokemon4 = 0;
@@ -44,13 +77,13 @@ class DashboardController extends AppController
         $moyPoids = round($moyPoids/$nbPokemon4, 2);
 
 
-
+        //permet d'envoyer les données au Dashboard
         $this->set(compact('row',
             'toutPoids',
             'nbPokemon4',
             'moyPoids',
-            'generation4'
-            
+            'generation4',
+            'comptFee'
         ));
     }
 

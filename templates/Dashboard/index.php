@@ -17,9 +17,10 @@
 <div class="container">
     <div class="container-top">
         <!--Poids moyen-->
-        <div class="left">
+        <div class="wrap">
             <h2 style="margin-top: 47px">Poids moyen Pokemons  de la 4ème génération</h2>
             <p> La moyenne de poids des Pokemon de la 4ième génération (387 à 493) est : <strong><?= $moyPoids ?></strong>.</p>
+            <p class="gen137"> On dénombre <?= $comptFee ?> Pokemon de type Fée parmis les générations 1, 3 et 7. </p>
         </div>
     </div>
 </div>

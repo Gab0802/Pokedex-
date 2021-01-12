@@ -7895,4 +7895,13 @@ h5 {
 .custom {
   width:100%;
   padding: 0;
+  border : 0;
+ 
+}
+.custom:nth-child(1) {
+  transform: translateY(0px) rotate(0deg);
+}
+
+.gen137 {
+  margin-top: 40px;
 }
